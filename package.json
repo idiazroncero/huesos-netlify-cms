@@ -1,0 +1,73 @@
+{
+  "name": "eleventy-netlify-cms",
+  "version": "1.0.0",
+  "description": "Custom solution for a static site generator using Netlify CMS based on danurbanowicz/eleventy-netlify-boilerplate and huesos",
+  "scripts": {
+    "build": "sh scripts/build.sh",
+    "watch": "yarn concurrently \"yarn eleventy --watch\" \"yarn css:watch\" ",
+    "serve": "yarn eleventy --serve",
+    "debug": "DEBUG=* yarn eleventy",
+    "images:favicons": "yarn gulp generatePwaFavicons",
+    "pwa": "yarn gulp generatePwaFavicons",
+    "css": "yarn node-sass src/assets/scss/style.scss src/assets/css/style.css --source-map=true",
+    "css:prod": "yarn node-sass src/assets/scss/style.scss src/assets/css/style.css --output-style=compressed",
+    "css:watch": "yarn node-sass src/assets/scss/style.scss src/assets/css/style.css -w",
+    "css:post": "yarn postcss src/assets/css/style.css -o src/assets/css/style.css --no-map",
+    "js:build": "parcel build src/assets/js/script.ts -d src/assets/js -o script-bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/idiazroncero/eleventy-netlify-cms"
+  },
+  "author": {
+    "name": "Nacho Díaz",
+    "email": "idiaz.roncero@gmail.com",
+    "url": "https://idiazroncero.com/"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.11.0",
+    "@mightyplow/eleventy-plugin-cache-buster": "^1.1.3",
+    "clean-css": "^4.1.11",
+    "concurrently": "^4.1.0",
+    "del": "^3.0.0",
+    "directory-tree": "^2.2.1",
+    "eleventy-plugin-pwa": "^1.0.7",
+    "gulp": "^4.0.0",
+    "gulp-changed": "^4.0.0",
+    "gulp-changed-in-place": "^2.3.0",
+    "gulp-cli": "^2.0.1",
+    "gulp-debug": "^4.0.0",
+    "gulp-favicons": "^2.3.0",
+    "gulp-imagemin": "^5.0.3",
+    "gulp-newer": "^1.4.0",
+    "gulp-responsive": "^2.13.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-webp": "^4.0.1",
+    "html-minifier": "^3.5.19",
+    "huesos": "idiazroncero/huesos#dev",
+    "kss": "^3.0.0-beta.23",
+    "luxon": "^1.0.0",
+    "markdown-it": "^8.4.1",
+    "markdown-it-anchor": "^4.0.0",
+    "node-sass": "^4.9.3",
+    "parcel": "^1.12.3",
+    "patch-package": "^6.1.0",
+    "postcss": "^7.0.2",
+    "postcss-critical-split": "^2.5.3",
+    "postcss-preset-env": "^6.6.0",
+    "postinstall-postinstall": "^2.0.0",
+    "sass": "^1.13.4",
+    "sharp": "^0.22.0",
+    "showdown": "^1.9.0",
+    "typescript": "^3.9.3",
+    "uglify-es": "^3.3.9",
+    "uglify-js": "^3.4.5"
+  },
+  "dependencies": {
+    "@11ty/eleventy-img": "^0.3.0",
+    "postcss-cli": "^6.1.2",
+    "stylelint": "^10.0.1"
+  }
+}
